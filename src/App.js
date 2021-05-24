@@ -1,38 +1,60 @@
-import React from "react"
-import logo from "./logo.svg";
+import React from "react";
 import "./App.css";
-import Componente from "./rutadelcurso/ComponentesOne";
-import Propiedades from "./rutadelcurso/Propiedades";
-import Estado from "./rutadelcurso/Estado";
+
+
+// function Cabecera(props) {
+//   return (
+//     <div className = "hola">
+//       {props.text}
+//     </div>
+//   )
+// }
+
+class Cabecera extends React.Component{
+  state = {
+    show: 1
+  }
+
+  cambiar2 = () => {
+    this.setState({show:2})
+  }
+
+  cambiar1 = () =>{
+    this.setState({show:1})
+  }
+
+  render() {
+    if (this.state.show <= 1){
+      return (
+        <div className = "hola">
+          {this.props.text}
+          <hr/>
+          <button onClick = {this.cambiar2}>Cambiar Estado</button>
+        </div>
+      )
+    }else{
+      return (
+        <div>
+            <h2>No existe ningun usuario</h2>
+            <button onClick = {this.cambiar1} >Cambiar Estado</button>
+        </div>
+      )
+    }
+  }
+}
 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code> src / App.js </code> and save to reload.{" "}
-        </p>{" "}
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React{" "}
-        </a>{" "}
-        <section>
-          <Componente msg="Soy un programador junio" />
-          <Propiedades cadena="verdadero" numero = {58} numeroOne = {78}></Propiedades>
-          <hr/>
-          <Estado/>
-
-
-        </section>{" "}
-      </header>{" "}
-    </div>
-  );
+  <div className = "hola">
+    <Cabecera text = "Hola"/>
+    <hr/>
+    <Cabecera text = "Hello"/>
+    <hr/>
+    <Cabecera text = "KLK"/>
+  </div>
+  )
 }
+
 
 export default App;
