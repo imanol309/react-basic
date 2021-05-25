@@ -7,3 +7,15 @@
   font-family: direction;
   font-size: 30px;
 }
+
+.holaButton{
+  padding: 1%;
+  background: darkgoldenrod;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 35px;
+}
+
+input{
+  margin: 2%;
+}
