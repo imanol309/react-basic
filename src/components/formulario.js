@@ -10,12 +10,11 @@ class formulario extends Component {
 
     enviarDatoss = (e) => {
         console.log(this.state);
-        console.log("Accion quitada");
+        this.props.mostrar(this.state.id,this.state.nombre,this.state.edad);
         e.preventDefault();
     }
 
     mostrarDatosEscrito = (r) => {
-        console.log(r.target.name, r.target.value)
         this.setState({
             [r.target.name]: r.target.value
         })
